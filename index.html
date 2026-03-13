@@ -25,50 +25,51 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Headline and body fonts + script accent -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=DM+Sans:wght@400;500;700&family=Allison&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <!-- Particles background -->
-    <div id="particles-js"></div>
-    
-    <!-- Main layout: sidebar + main content -->
-    <div class="layout">
-      <!-- Sidebar: name, nav, social -->
-      <aside class="sidebar">
-        <div class="sidebar-content">
-          <div class="sidebar-header">
-            <h1>Muhammad Rizal</h1> <!-- Your name -->
-            <h2>Software Engineer</h2> <!-- Your title -->
-            <p>Clean code. Scalable systems. Web experiences that work.</p> <!-- Short tagline -->
+    <!-- Custom cursor: glow + core -->
+    <div class="cursor-glow"></div>
+    <div class="cursor-dot"></div>
+
+    <!-- Page layout -->
+    <div class="page">
+      <!-- Top navigation -->
+      <header class="top-nav">
+        <nav class="nav-center" aria-label="Primary">
+          <div class="nav-floating">
+            <a href="#hero" class="nav-link nav-link-active">Home</a>
+            <a href="#projects" class="nav-link">Work</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#contact" class="nav-link">Contact</a>
+            <a href="./assets/documents/resume - Muhammad Rizal.pdf" target="_blank" class="nav-link nav-link-ghost">Resume</a>
           </div>
-        </div>
-        <!-- Navigation links -->
-        <nav>
-          <ul class="sidebar-nav">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
         </nav>
-        <!-- Social media icons -->
-        <ul class="sidebar-social">
-          <li><a href="https://github.com/MuhammadRizal-ctrl" target="_blank"><i class="fab fa-github"></i></a></li>
-          <li><a href="https://www.linkedin.com/in/muhammad-rizal-fatkhurrohman/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-          <li><a href="https://medium.com/@rizalfatkhurikh" target="_blank"><i class="fab fa-medium"></i></a></li>
-          <li><a href="https://www.instagram.com/rizalfatkhurikh/" target="_blank"><i class="fab fa-instagram"></i></a></li>
-          <li><a href="mailto:rizalfatkhurikh@email.com"><i class="fas fa-envelope"></i></a></li>
-        </ul>
-      </aside>
+      </header>
+
       <!-- Main content area -->
       <main class="main-content">
-        <!-- Hero section: profile photo and quote -->
-        <section id="hero">
-                           <img src="./assets/images/1750939045306.jpg" alt="Profile Picture" />
-          <blockquote>
-            “Every line I write brings me one step closer to the engineer I want to be.”
-          </blockquote>
+        <!-- Hero section -->
+        <section id="hero" class="hero">
+          <div class="hero-content">
+            <div class="hero-availability-pill">
+              <span class="pill-dot"></span>
+              <span>Available to work</span>
+            </div>
+            <h1 class="hero-title">
+              <span class="hero-title-line">Muhammad Rizal</span>
+              <span class="hero-title-complexity-wrap">
+                <span class="hero-title-complexity">full‑stack</span>
+                <span class="hero-title-underline"></span>
+              </span>
+              <span class="hero-title-highlight">developer.</span>
+            </h1>
+            <p class="hero-subtitle">
+              Full-stack developer specializing in backend architecture, scalable APIs, and clean interfaces that make complex systems feel simple.
+            </p>
+          </div>
         </section>
         <!-- About section -->
         <section id="about">
@@ -162,141 +163,33 @@
         </footer>
       </main>
     </div>
-    
-    <!-- Particles.js script -->
-               <script src="./assets/js/particles.min.js"></script>
+
+    <!-- Motion-like animations and cursor glow -->
     <script>
-      // Wait for DOM to load
-      document.addEventListener('DOMContentLoaded', function() {
-        // Check if particles container exists
-        const particlesContainer = document.getElementById('particles-js');
-        if (!particlesContainer) {
-          console.error('Particles container not found');
-          return;
+      document.addEventListener('DOMContentLoaded', function () {
+        const hero = document.querySelector('.hero');
+        if (hero) {
+          hero.classList.add('hero-animate');
         }
-        
-        console.log('Particles container found:', particlesContainer);
-        
-        // Check if particles.js is loaded
-        if (typeof particlesJS !== 'undefined') {
-          console.log('Particles.js loaded successfully');
-          
-                     // Initialize particles.js with custom configuration
-           particlesJS('particles-js', {
-             "particles": {
-               "number": {
-                 "value": 100,
-                 "density": {
-                   "enable": true,
-                   "value_area": 800
-                 }
-               },
-               "color": {
-                 "value": "#A7D129"
-               },
-               "shape": {
-                 "type": "circle",
-                 "stroke": {
-                   "width": 0,
-                   "color": "#000000"
-                 },
-                 "polygon": {
-                   "nb_sides": 5
-                 }
-               },
-               "opacity": {
-                 "value": 0.8,
-                 "random": true,
-                 "anim": {
-                   "enable": false,
-                   "speed": 1,
-                   "opacity_min": 0.4,
-                   "sync": false
-                 }
-               },
-               "size": {
-                 "value": 5,
-                 "random": true,
-                 "anim": {
-                   "enable": false,
-                   "speed": 40,
-                   "size_min": 0.1,
-                   "sync": false
-                 }
-               },
-               "line_linked": {
-                 "enable": true,
-                 "distance": 150,
-                 "color": "#A7D129",
-                 "opacity": 0.6,
-                 "width": 2
-               },
-               "move": {
-                 "enable": true,
-                 "speed": 3,
-                 "direction": "none",
-                 "random": false,
-                 "straight": false,
-                 "out_mode": "out",
-                 "bounce": false,
-                 "attract": {
-                   "enable": false,
-                   "rotateX": 600,
-                   "rotateY": 1200
-                 }
-               }
-             },
-             "interactivity": {
-               "detect_on": "canvas",
-               "events": {
-                 "onhover": {
-                   "enable": true,
-                   "mode": "grab"
-                 },
-                 "onclick": {
-                   "enable": true,
-                   "mode": "push"
-                 },
-                 "resize": true
-               },
-               "modes": {
-                 "grab": {
-                   "distance": 140,
-                   "line_linked": {
-                     "opacity": 0.8
-                   }
-                 },
-                 "bubble": {
-                   "distance": 400,
-                   "size": 40,
-                   "duration": 2,
-                   "opacity": 8,
-                   "speed": 3
-                 },
-                 "repulse": {
-                   "distance": 200,
-                   "duration": 0.4
-                 },
-                 "push": {
-                   "particles_nb": 2
-                 },
-                 "remove": {
-                   "particles_nb": 2
-                 }
-               }
-             },
-             "retina_detect": true
-           });
-        } else {
-          console.error('Particles.js not loaded');
-          // Try loading from CDN as fallback
-          const script = document.createElement('script');
-          script.src = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
-          script.onload = function() {
-            console.log('Particles.js loaded from CDN');
-            // Re-initialize here if needed
-          };
-          document.head.appendChild(script);
+
+        const titleSegments = document.querySelectorAll('.hero-title-line, .hero-title-complexity-wrap, .hero-title-highlight');
+        titleSegments.forEach((el, index) => {
+          el.style.setProperty('--stagger-index', index);
+        });
+
+        const cursorGlow = document.querySelector('.cursor-glow');
+        const cursorDot = document.querySelector('.cursor-dot');
+        if (cursorGlow || cursorDot) {
+          window.addEventListener('pointermove', function (event) {
+            const x = event.clientX;
+            const y = event.clientY;
+            if (cursorGlow) {
+              cursorGlow.style.transform = 'translate3d(' + x + 'px, ' + y + 'px, 0)';
+            }
+            if (cursorDot) {
+              cursorDot.style.transform = 'translate3d(' + x + 'px, ' + y + 'px, 0)';
+            }
+          });
         }
       });
     </script>

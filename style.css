@@ -35,59 +35,25 @@
    Color Palette & Root Variables
    ===================== */
 :root {
-  --color-bg: #000000;              /* Main background color */
-  --color-bg-light: #3E432E;        /* Sidebar/light background */
-  --color-accent: #A7D129;          /* Accent color for links, highlights */
-  --color-link: #A7D129;            /* Link color */
-  --color-link-hover: #616F39;      /* Link hover color */
-  --color-text: #f4f4f4;            /* Main text color */
-  --color-text-secondary: #bfc6a7;  /* Secondary text color */
-  --color-white: #fff;
-  --font-main: 'Inter', Arial, Helvetica, sans-serif;
-  --max-width: 900px;
-  --sidebar-width: 220px;
-  --transition: 0.2s cubic-bezier(0.4,0,0.2,1);
+  --color-bg: #050608;              /* Main background color */
+  --color-bg-gradient-top: #070b0f;
+  --color-bg-gradient-bottom: #020503;
+  --color-bg-soft: #111319;
+  --color-accent: #d7ff3f;          /* Neon yellow-green accent */
+  --color-accent-soft: rgba(215, 255, 63, 0.12);
+  --color-link: #d7ff3f;            /* Link color */
+  --color-link-hover: #f4ff9f;      /* Link hover color */
+  --color-text: #f5f7ff;            /* Main text color */
+  --color-text-secondary: #a0a5b8;  /* Secondary text color */
+  --color-white: #ffffff;
+  --font-main: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Space Grotesk', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-script: 'Allison', cursive;
+  --max-width: 1120px;
+  --transition: 0.25s cubic-bezier(0.4,0,0.2,1);
 }
 
-/* =====================
-   Particles Background
-   ===================== */
-/* 
-  Interactive particles background using particles.js
-  - Fixed positioning covers entire viewport
-  - Z-index layering ensures particles appear above background but below content
-  - Transparent background allows dark theme to show through
-  - Overflow hidden prevents scrollbars from particle movement
-*/
-#particles-js {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  background: transparent;
-  overflow: hidden;
-}
-
-/* Ensure all content is above particles */
-.layout {
-  position: relative;
-  z-index: 2;
-  background: transparent;
-}
-
-.sidebar {
-  position: relative;
-  z-index: 10;
-  background: transparent;
-}
-
-.main-content {
-  position: relative;
-  z-index: 5;
-  background: transparent;
-}
+/* (Particles styles removed – using pure gradient background now) */
 
 /* =====================
    Base Styles
@@ -96,7 +62,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: var(--color-bg);
+  background: radial-gradient(circle at top left, #1b222f 0%, #050608 50%, #020503 100%);
   color: var(--color-text);
   font-family: var(--font-main);
   font-size: 16px;
@@ -106,138 +72,27 @@ html, body {
 
 body {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background: var(--color-bg);
+  background: radial-gradient(circle at top left, #1b222f 0%, #050608 50%, #020503 100%);
+  cursor: none;
 }
 
 /* =====================
-   Layout: Sidebar + Main Content
+   Page Layout
    ===================== */
-.layout {
-  display: flex;
+.page {
+  position: relative;
   min-height: 100vh;
-  background: var(--color-bg);
-}
-
-/* =====================
-   Sidebar Layout & Styling
-   ===================== */
-/* 
-  Fixed sidebar containing:
-  - Header with name, title, and tagline
-  - Navigation menu
-  - Social media links
-  - Responsive design with mobile adaptations
-*/
-.sidebar {
-  background: transparent;
-  color: var(--color-text);
-  width: 340px;
-  min-width: 260px;
-  max-width: 400px;
-  height: 100vh;
-  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 0 48px;
-  border: none;
-  z-index: 10;
-  box-shadow: none;
-}
-
-/* Sidebar content wrapper for vertical centering */
-.sidebar-content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  flex: 1 1 auto;
-  justify-content: center;
-  width: 100%;
-}
-
-/* Sidebar header: name, title, tagline */
-.sidebar-header {
-  margin-top: 32px;
-  margin-bottom: 8px;
-}
-
-.sidebar-header h1 {
-  font-size: 2.8rem;
-  font-weight: 900;
-  color: var(--color-text);
-  margin: 0 0 4px 0;
-  letter-spacing: -1px;
-}
-
-.sidebar-header h2 {
-  font-size: 1.3rem;
-  font-weight: 500;
-  color: var(--color-text);
-  margin: 0 0 18px 0;
-}
-
-.sidebar-header p {
-  color: var(--color-text-secondary);
-  font-size: 1.05rem;
-  margin-bottom: 32px;
-}
-
-/* Sidebar navigation */
-.sidebar-nav {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0;
-  margin: 0 0 8px 0;
-  padding: 0;
-  list-style: none;
-  width: 100%;
-}
-
-.sidebar-nav li a {
-  color: var(--color-text-secondary);
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 1.1rem;
-  letter-spacing: 1px;
-  padding: 6px 0;
-  transition: color var(--transition);
-  position: relative;
-}
-
-.sidebar-nav li a:hover, .sidebar-nav li a:focus {
-  color: var(--color-accent);
-}
-
-/* Sidebar social icons */
-.sidebar-social {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar-social li a {
-  color: var(--color-accent);
-  font-size: 1.5rem;
-  transition: color var(--transition), transform var(--transition);
-}
-
-.sidebar-social li a:hover, .sidebar-social li a:focus {
-  color: var(--color-link-hover);
-  transform: translateY(-3px) scale(1.1);
+  padding: 24px 32px 48px;
 }
 
 /* Main content area */
 .main-content {
-  /* Remove margin-left */
-  margin-left: 0;
   width: 100%;
-  max-width: 900px;
-  padding: 64px 48px 48px 48px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-top: 80px;
   min-height: 100vh;
   background: transparent;
   display: flex;
@@ -245,55 +100,275 @@ body {
 }
 
 .main-content section {
-  margin-bottom: 60px;
+  margin-bottom: 72px;
 }
 
 .main-content h2 {
-  font-size: 2rem;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 20px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* =====================
+   Top Navigation
+   ===================== */
+.top-nav {
+  position: fixed;
+  inset-inline: 0;
+  top: 18px;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  background: transparent;
+  pointer-events: none; /* let floating nav feel detached from header */
+}
+
+.nav-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  pointer-events: none; /* only pill is interactive */
+}
+
+.nav-floating {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  padding: 6px 26px;
+  border-radius: 999px;
+  background: rgba(8, 11, 18, 0.96);
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.9),
+    0 0 0 1px rgba(255, 255, 255, 0.09);
+  pointer-events: auto;
+}
+
+.nav-link {
+  position: relative;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  text-transform: none;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  color: var(--color-text-secondary);
+  padding: 6px 12px;
+  border-radius: 999px;
+  transition: background var(--transition), color var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  transform: translateY(-1px);
+  color: var(--color-link-hover);
+}
+
+.nav-link-active {
+  background: var(--color-accent-soft);
   color: var(--color-accent);
-  margin-bottom: 24px;
-  font-weight: 700;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.6);
+}
+
+.nav-link-ghost {
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /* =====================
    Hero Section
    ===================== */
-/* 
-  Welcome section featuring:
-  - Profile photo with rounded frame and shadow
-  - Personal quote with elegant typography
-  - Centered layout with proper spacing
-  - Transparent background for particles visibility
-*/
-#hero {
+.hero {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 48px;
-  margin-top: 24px;
-  background: transparent;
+  min-height: calc(100vh - 120px);
+  max-width: 1040px;
+  padding-top: 32px;
+  padding-bottom: 48px;
 }
 
-#hero img {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid var(--color-accent);
-  box-shadow: 0 4px 24px 0 rgba(2,12,27,0.10);
-  margin-bottom: 28px;
-  background: transparent;
-}
-
-#hero blockquote {
-  font-size: 1.25rem;
-  color: var(--color-accent);
-  font-style: italic;
+.hero-content {
+  max-width: 720px;
   text-align: center;
-  margin: 0;
-  max-width: 400px;
-  background: transparent;
+}
+
+.hero-availability-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: radial-gradient(circle at top left, rgba(215,255,63,0.26), rgba(5,6,8,0.9));
+  box-shadow: 0 0 40px rgba(215,255,63,0.25);
+  margin-bottom: 32px;
+}
+
+.hero-availability-pill span {
+  font-size: 0.8rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+
+.pill-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--color-accent);
+  box-shadow: 0 0 16px rgba(215,255,63,0.9);
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(3.8rem, 7vw, 5.6rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  color: var(--color-white);
+  margin: 0 0 32px 0;
+}
+
+.hero-title-line {
+  display: block;
+  transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1), text-shadow 400ms;
+}
+
+.hero-title-complexity-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-block: 16px 10px;
+}
+
+.hero-title-complexity {
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-size: 1.5em;
+  color: var(--color-accent);
+  letter-spacing: 0.05em;
+}
+
+.hero-title-underline {
+  position: absolute;
+  inset-inline: 0;
+  bottom: -6px;
+  height: 22px;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at left, rgba(215,255,63,0.4), transparent 60%),
+    radial-gradient(circle at right, rgba(215,255,63,0.4), transparent 60%);
+  border: 1px solid rgba(215,255,63,0.6);
+  opacity: 0.85;
+  filter: blur(1px);
+  z-index: -1;
+}
+
+.hero-title-highlight {
+  display: block;
+  color: var(--color-accent);
+  transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1), text-shadow 400ms;
+}
+
+.hero-subtitle {
+  max-width: 640px;
+  font-size: 0.98rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+}
+
+.hero-title-line:hover,
+.hero-title-highlight:hover {
+  transform: translateY(-2px);
+  text-shadow: 0 0 32px rgba(215, 255, 63, 0.55);
+}
+
+.hero-title-complexity:hover {
+  text-shadow: 0 0 22px rgba(215, 255, 63, 0.65);
+}
+
+/* Hero entrance animation (Framer Motion–like) */
+.hero-animate .hero-title-line,
+.hero-animate .hero-title-complexity-wrap,
+.hero-animate .hero-title-highlight,
+.hero-animate .hero-subtitle,
+.hero-animate .hero-availability-pill {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: heroFadeUp 700ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-animate .hero-availability-pill {
+  animation-delay: 80ms;
+}
+
+.hero-animate .hero-title-line,
+.hero-animate .hero-title-complexity-wrap,
+.hero-animate .hero-title-highlight {
+  animation-delay: calc(160ms + var(--stagger-index) * 90ms);
+}
+
+.hero-animate .hero-subtitle {
+  animation-delay: 520ms;
+}
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Cursor glow tracker */
+.cursor-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 420px;
+  height: 420px;
+  margin-left: -210px;
+  margin-top: -210px;
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(215, 255, 63, 0.18) 0%,
+    rgba(215, 255, 63, 0.08) 28%,
+    rgba(5, 6, 8, 0.06) 55%,
+    transparent 80%
+  );
+  mix-blend-mode: screen;
+  opacity: 0.55;
+  filter: blur(6px);
+  z-index: 1;
+}
+
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  margin-left: -7px;
+  margin-top: -7px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, #ffffff 0%, #d7ff3f 45%, rgba(215, 255, 63, 0) 70%);
+  box-shadow:
+    0 0 8px rgba(255, 255, 255, 0.9),
+    0 0 22px rgba(215, 255, 63, 0.9);
+  mix-blend-mode: screen;
+  z-index: 2;
 }
 
 /* =====================
@@ -656,57 +731,38 @@ footer ul li a:hover, footer ul li a:focus {
   - 1100px: Large desktop adjustments
   - 900px: Tablet and small desktop
   - 600px: Mobile devices
-  - min-width 900px: Desktop-specific features
 */
 @media (max-width: 1100px) {
-  .main-content {
-    padding: 48px 24px 24px 24px;
+  .page {
+    padding: 20px 24px 40px;
   }
-  .sidebar {
-    padding: 0 24px;
+  .top-nav {
+    padding-inline: 24px;
+  }
+  .hero-title {
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
   }
 }
 
 @media (max-width: 900px) {
-  .layout {
-    flex-direction: column;
+  .page {
+    padding-inline: 18px;
   }
-  .sidebar {
-    width: 100%;
-    min-width: 0;
-    max-width: 100vw;
-    height: auto;
-    border: none;
-    border-bottom: none;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 24px 16px;
-    box-shadow: none;
-  }
-  .sidebar-content {
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    width: auto;
-  }
-  .sidebar-header {
-    margin-top: 0;
-  }
-  .sidebar-nav {
-    flex-direction: row;
-    align-items: center;
-    gap: 16px;
-    margin: 0 0 0 24px;
-    width: auto;
-  }
-  .sidebar-social {
-    margin-top: 0;
+  .top-nav {
+    padding-inline: 18px;
+    top: 10px;
   }
   .main-content {
-    margin-left: 0;
-    padding: 32px 12px 24px 12px;
-    max-width: 100vw;
+    padding-top: 96px;
+  }
+  .nav-center {
+    order: 3;
+    margin-top: 10px;
+  }
+  .top-nav {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
   }
   #experience li {
     flex-direction: column;
@@ -736,27 +792,29 @@ footer ul li a:hover, footer ul li a:focus {
 }
 
 @media (max-width: 600px) {
-  .sidebar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 16px 8px;
+  .page {
+    padding-inline: 14px;
   }
-  .sidebar-header h1 {
-    font-size: 1.5rem;
+  .top-nav {
+    padding-inline: 14px;
+    top: 8px;
   }
-  .sidebar-header h2 {
-    font-size: 1rem;
+  .top-nav-links {
+    gap: 12px;
+    font-size: 0.7rem;
   }
   .main-content h2 {
     font-size: 1.2rem;
   }
-  #hero img {
-    width: 120px;
-    height: 120px;
+  .hero {
+    min-height: auto;
+    padding-top: 40px;
   }
-  #hero blockquote {
-    font-size: 1rem;
-    max-width: 90vw;
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  .hero-subtitle {
+    font-size: 0.95rem;
   }
   footer {
     font-size: 0.85rem;
@@ -770,46 +828,3 @@ footer ul li a:hover, footer ul li a:focus {
     max-width: 100vw;
   }
 }
-
-@media (min-width: 900px) {
-  .sidebar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100vh;
-    width: 340px;
-    align-self: flex-start;
-    z-index: 10;
-  }
-  .main-content {
-    margin-left: 400px;
-    z-index: 5;
-  }
-}
-
-/* Remove old header styles if present */
-header {
-  display: none !important;
-} 
-
-/* =====================
-   About Section
-   ===================== */
-#about {
-  background: transparent;
-}
-
-#about p {
-  background: transparent;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
-}
-
-/* Ensure text readability over particles */
-.sidebar-header h1,
-.sidebar-header h2,
-.sidebar-header p,
-.sidebar-nav li a,
-#hero blockquote,
-#about p {
-  text-shadow: 0 1px 3px rgba(0,0,0,0.9);
-} 
