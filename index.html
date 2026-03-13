@@ -72,22 +72,97 @@
           </div>
         </section>
         <!-- About section -->
-        <section id="about">
-          <p>
-            I’m a engineer passionate about crafting accessible, responsive digital experiences that are both thoughtfully designed and technically robust. My favorite work lives at the intersection of backend logic and frontend usability, I'm building interfaces that not only work, but feel right.
-          </p>
-          <p>
-            Currently, I’m a fullstack software engineering student at <a href="https://www.revou.co/" target="_blank">RevoU</a> and a Computer Science major at <a href="https://binus.ac.id/" target="_blank">BINUS University</a>. My focus is on backend engineering and system design, while also sharpening my skills in frontend architecture and responsive design.
-          </p>
-          <p>
-            Before diving into code, I worked in IT and Customer Support roles at <a href="https://www.sinergy.co.id/" target="_blank">PT Sinergy Informasi Pratama</a>, a system integrator company that provided infrastructure solutions and technical support to major clients like <a href="https://www.btn.co.id/id" target="_blank">BTN</a>, <a href="https://www.bankbjb.co.id/" target="_blank">Bank BJB</a>, <a href="https://www.bpjs-kesehatan.go.id/" target="_blank">BPJS Kesehatan</a>, and several regional government offices. My day-to-day involved solving connectivity issues, checking network configurations, handling VPN failures, and helping users recover from all kinds of unexpected “why-is-this-not-working” moments.
-          </p>
-          <p>
-            Working in the field taught me more than just tech. It taught me how to stay calm under pressure, communicate clearly with both technical and non-technical users, and solve real problems in real time. Now, I bring that same mindset into software development which is building scalable, maintainable web applications that focus on usability, performance, and a bit less panic.
-          </p>
-          <p>
-            When I’m not coding, I’m either playing mini soccer, curating my music <a href="https://open.spotify.com/user/romjlu8mc3e7dt8xez7128go5" target="_blank">playlists</a>, or writing on <a href="https://medium.com/@rizalfatkhurikh" target="_blank">Medium</a>. I share thoughts about music, life, football, and sometimes just document where I had my latest cup of coffee. All of that will show up here too.
-          </p>
+        <section id="about" class="about">
+          <aside class="about-nav" aria-label="About navigation">
+            <h2 class="about-heading"></h2>
+            <ol class="about-nav-list">
+              <li class="about-nav-item about-nav-item-active">
+                <button type="button" data-about-target="story">
+                  <span class="about-nav-index">01</span>
+                  <span class="about-nav-label">Story</span>
+                </button>
+              </li>
+              <li class="about-nav-item">
+                <button type="button" data-about-target="experience">
+                  <span class="about-nav-index">02</span>
+                  <span class="about-nav-label">Experience</span>
+                </button>
+              </li>
+              <li class="about-nav-item">
+                <button type="button" data-about-target="tools">
+                  <span class="about-nav-index">03</span>
+                  <span class="about-nav-label">Tools &amp; Skills</span>
+                </button>
+              </li>
+              <li class="about-nav-item">
+                <button type="button" data-about-target="recognition">
+                  <span class="about-nav-index">04</span>
+                  <span class="about-nav-label">Recognition</span>
+                </button>
+              </li>
+            </ol>
+          </aside>
+
+          <div class="about-content">
+            <article id="about-story" data-about-section="story" class="about-section about-section-active">
+              <h3 class="about-section-title"></h3>
+              <p>
+                I’m an engineer who enjoys turning complex systems into interfaces that feel calm, intentional, and easy to use.
+                My favorite work lives at the intersection of backend logic and frontend usability &mdash; stitching together APIs,
+                data models, and UI states so that people never have to think about how it all works under the hood.
+              </p>
+              <p>
+                Right now, I’m a fullstack software engineering student at
+                <a href="https://www.revou.co/" target="_blank">RevoU</a> and a Computer Science major at
+                <a href="https://binus.ac.id/" target="_blank">BINUS University</a>. I spend most of my time designing backend
+                architecture, modelling data, and building APIs, while also sharpening how those systems surface in responsive,
+                accessible UIs.
+              </p>
+              <p>
+                Before diving into code, I worked in IT and Customer Support at
+                <a href="https://www.sinergy.co.id/" target="_blank">PT Sinergy Informasi Pratama</a>, a system integrator
+                serving clients like <a href="https://www.btn.co.id/id" target="_blank">BTN</a>,
+                <a href="https://www.bankbjb.co.id/" target="_blank">Bank BJB</a>, and
+                <a href="https://www.bpjs-kesehatan.go.id/" target="_blank">BPJS Kesehatan</a>. Most days meant VPN failures,
+                misconfigured networks, and “why is this broken?” moments from users who just needed things to work.
+                That experience taught me how much good infrastructure and clear communication matter.
+              </p>
+              <p>
+                Now when I build software, I bring that same mindset: stay calm under pressure, be honest about trade‑offs,
+                and ship systems that are reliable, observable, and maintainable. I care a lot about readable code,
+                predictable APIs, and documentation that future teammates will actually thank you for.
+              </p>
+              <p>
+                Outside of code, you’ll probably find me on a mini soccer field, curating new
+                <a href="https://open.spotify.com/user/romjlu8mc3e7dt8xez7128go5" target="_blank">playlists</a>,
+                or writing on <a href="https://medium.com/@rizalfatkhurikh" target="_blank">Medium</a> about music, football,
+                and the random coffee shops that keep me going.
+              </p>
+            </article>
+
+            <!-- Placeholders for future about subsections -->
+            <article id="about-experience" data-about-section="experience" class="about-section">
+              <h3 class="about-section-title">02 / Experience</h3>
+              <p>
+                This section will highlight a more narrative view of my work history &mdash; how each role shaped the way I
+                design, build, and ship software today.
+              </p>
+            </article>
+
+            <article id="about-tools" data-about-section="tools" class="about-section">
+              <h3 class="about-section-title">03 / Tools &amp; Skills</h3>
+              <p>
+                A quick overview of the languages, frameworks, and workflows I enjoy working with across the stack.
+              </p>
+            </article>
+
+            <article id="about-recognition" data-about-section="recognition" class="about-section">
+              <h3 class="about-section-title">04 / Recognition</h3>
+              <p>
+                A space for certifications, talks, or moments I’m proud of as I grow in this field.
+              </p>
+            </article>
+          </div>
         </section>
         <!-- Experience section: timeline of jobs -->
         <section id="experience">
@@ -183,14 +258,61 @@
           window.addEventListener('pointermove', function (event) {
             const x = event.clientX;
             const y = event.clientY;
-            if (cursorGlow) {
-              cursorGlow.style.transform = 'translate3d(' + x + 'px, ' + y + 'px, 0)';
+            const transform = 'translate3d(' + x + 'px, ' + y + 'px, 0)';
+            if (cursorGlow) cursorGlow.style.transform = transform;
+            if (cursorDot) cursorDot.style.transform = transform;
+          });
+        }
+
+        // About section local tab navigation
+        const aboutButtons = document.querySelectorAll('.about-nav-item button');
+        const aboutSections = document.querySelectorAll('[data-about-section]');
+        aboutButtons.forEach((button) => {
+          button.addEventListener('click', () => {
+            const target = button.getAttribute('data-about-target');
+            aboutButtons.forEach((b) => b.parentElement.classList.remove('about-nav-item-active'));
+            button.parentElement.classList.add('about-nav-item-active');
+            aboutSections.forEach((section) => {
+              section.classList.toggle(
+                'about-section-active',
+                section.getAttribute('data-about-section') === target
+              );
+            });
+          });
+        });
+
+        // Scrollspy for main nav
+        const navLinks = document.querySelectorAll('.nav-link:not(.nav-link-ghost)');
+        const sectionIds = ['hero', 'projects', 'about', 'contact'];
+        const sections = sectionIds
+          .map((id) => document.getElementById(id))
+          .filter(Boolean);
+
+        function updateNavOnScroll() {
+          const scrollY = window.scrollY;
+          const offset = 160; // account for top nav height
+
+          let currentId = 'hero';
+          sections.forEach((section) => {
+            const top = section.offsetTop - offset;
+            if (scrollY >= top) {
+              currentId = section.id;
             }
-            if (cursorDot) {
-              cursorDot.style.transform = 'translate3d(' + x + 'px, ' + y + 'px, 0)';
+          });
+
+          navLinks.forEach((link) => {
+            const href = link.getAttribute('href') || '';
+            const id = href.startsWith('#') ? href.slice(1) : '';
+            if (id === currentId) {
+              link.classList.add('nav-link-active');
+            } else {
+              link.classList.remove('nav-link-active');
             }
           });
         }
+
+        updateNavOnScroll();
+        window.addEventListener('scroll', updateNavOnScroll);
       });
     </script>
 </body>
