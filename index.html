@@ -208,7 +208,7 @@
         <!-- About section -->
         <section id="about" class="about">
           <aside class="about-nav" aria-label="About navigation">
-            <h2 class="about-heading"></h2>
+            <h2 class="about-heading">About</h2>
             <ol class="about-nav-list">
               <li class="about-nav-item about-nav-item-active">
                 <button type="button" data-about-target="story">
@@ -238,40 +238,46 @@
           </aside>
 
           <div class="about-content">
-            <article id="about-story" data-about-section="story" class="about-section about-section-active">
-              <h3 class="about-section-title"></h3>
-              <p>
-                I’m an engineer who enjoys turning complex systems into interfaces that feel calm, intentional, and easy to use.
-                My favorite work lives at the intersection of backend logic and frontend usability &mdash; stitching together APIs,
-                data models, and UI states so that people never have to think about how it all works under the hood.
-              </p>
-              <p>
-                Right now, I’m a fullstack software engineering student at
-                <a href="https://www.revou.co/" target="_blank">RevoU</a> and a Computer Science major at
-                <a href="https://binus.ac.id/" target="_blank">BINUS University</a>. I spend most of my time designing backend
-                architecture, modelling data, and building APIs, while also sharpening how those systems surface in responsive,
-                accessible UIs.
-              </p>
-              <p>
-                Before diving into code, I worked in IT and Customer Support at
-                <a href="https://www.sinergy.co.id/" target="_blank">PT Sinergy Informasi Pratama</a>, a system integrator
-                serving clients like <a href="https://www.btn.co.id/id" target="_blank">BTN</a>,
-                <a href="https://www.bankbjb.co.id/" target="_blank">Bank BJB</a>, and
-                <a href="https://www.bpjs-kesehatan.go.id/" target="_blank">BPJS Kesehatan</a>. Most days meant VPN failures,
-                misconfigured networks, and “why is this broken?” moments from users who just needed things to work.
-                That experience taught me how much good infrastructure and clear communication matter.
-              </p>
-              <p>
-                Now when I build software, I bring that same mindset: stay calm under pressure, be honest about trade‑offs,
-                and ship systems that are reliable, observable, and maintainable. I care a lot about readable code,
-                predictable APIs, and documentation that future teammates will actually thank you for.
-              </p>
-              <p>
-                Outside of code, you’ll probably find me on a mini soccer field, curating new
-                <a href="https://open.spotify.com/user/romjlu8mc3e7dt8xez7128go5" target="_blank">playlists</a>,
-                or writing on <a href="https://medium.com/@rizalfatkhurikh" target="_blank">Medium</a> about music, football,
-                and the random coffee shops that keep me going.
-              </p>
+            <article id="about-story" data-about-section="story" class="about-section about-section-active about-story">
+              <div class="story-panel">
+                <h3 class="story-name">Muhammad Rizal</h3>
+                <p class="story-intro">
+                  I’m a full‑stack developer focused on backend architecture, clean APIs, and interfaces that make complex systems feel simple.
+                  I like turning messy problems into calm, intentional experiences &mdash; and I run on curiosity, good docs, and the occasional Spotify rabbit hole.
+                </p>
+                <h4 class="story-subheading">The journey</h4>
+                <div class="story-body">
+                  <p>
+                    Right now, I’m a fullstack software engineering student at
+                    <a href="https://www.revou.co/" target="_blank">RevoU</a> and a Computer Science major at
+                    <a href="https://binus.ac.id/" target="_blank">BINUS University</a>. Most of my time goes to designing backend architecture,
+                    modelling data, and building APIs, while keeping an eye on how those systems show up in responsive, accessible UIs.
+                  </p>
+                  <p>
+                    Before code, I worked in IT and Customer Support at
+                    <a href="https://www.sinergy.co.id/" target="_blank">PT Sinergy Informasi Pratama</a>, supporting clients like
+                    <a href="https://www.btn.co.id/id" target="_blank">BTN</a>,
+                    <a href="https://www.bankbjb.co.id/" target="_blank">Bank BJB</a>, and
+                    <a href="https://www.bpjs-kesehatan.go.id/" target="_blank">BPJS Kesehatan</a>.
+                    VPN failures, misconfigured networks, and “why isn’t this working?” taught me how much infrastructure and clear communication really matter.
+                  </p>
+                  <p>
+                    Today I ship with the same mindset: stay calm under pressure, be honest about trade‑offs, and build systems that are reliable, observable, and maintainable.
+                    Outside of work you’ll find me on a mini soccer pitch, curating
+                    <a href="https://open.spotify.com/user/romjlu8mc3e7dt8xez7128go5" target="_blank">playlists</a>,
+                    or writing on <a href="https://medium.com/@rizalfatkhurikh" target="_blank">Medium</a>.
+                  </p>
+                </div>
+                <div class="story-footer">
+                  <ul class="story-social" aria-label="Social links">
+                    <li><a href="https://github.com/MuhammadRizal-ctrl" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/muhammad-rizal-fatkhurrohman/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a href="https://medium.com/@rizalfatkhurikh" target="_blank" rel="noopener noreferrer" aria-label="Medium"><i class="fab fa-medium-m"></i></a></li>
+                    <li><a href="https://www.instagram.com/rizalfatkhurikh/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                  </ul>
+                  <a href="#contact" class="story-contact-btn">Contact <i class="fas fa-envelope" aria-hidden="true"></i></a>
+                </div>
+              </div>
             </article>
 
             <!-- Placeholders for future about subsections -->
@@ -299,35 +305,76 @@
           </div>
         </section>
 
-        <!-- Experience section: timeline of jobs -->
-        <section id="experience">
-          <ul>
-            <!-- Experience item: Asia Payroll Hub -->
-            <li>
-              <time>Jul 2025 - Present</time>
-              <h3><a href="https://asiapayrollhub.com/" target="_blank">Backend Developer · Asia Payroll Hub</a></h3>
-              <p>Starting July 2025, I joined Asia Payroll Hub as a Backend Developer, where I design, build, and maintain scalable backend systems for payroll and HR solutions across Southeast Asia. My responsibilities include developing RESTful APIs, optimizing database performance, and ensuring data security and compliance. I collaborate closely with cross-functional teams to deliver robust features, automate payroll processes, and support seamless integrations with third-party platforms. This role allows me to deepen my expertise in backend architecture, cloud deployment, and the unique challenges of fintech and HR tech.</p>
+        <!-- Experience section -->
+        <section id="experience" class="experience-section">
+          <h2 class="experience-heading">Experience</h2>
+          <ul class="experience-list">
+            <li class="experience-row">
+              <div class="experience-date">
+                <time datetime="2025-07">Jul 2025 – Present</time>
+              </div>
+              <div class="experience-main">
+                <h3 class="experience-company">
+                  <a href="https://asiapayrollhub.com/" target="_blank" rel="noopener noreferrer">Asia Payroll Hub</a>
+                </h3>
+                <p class="experience-role">Backend Developer</p>
+                <ul class="experience-bullets">
+                  <li>Design, build, and maintain scalable backend systems for payroll and HR products across Southeast Asia.</li>
+                  <li>Develop RESTful APIs, tune database performance, and apply security and compliance practices for sensitive data.</li>
+                  <li>Collaborate with cross-functional teams on features, automation, and integrations with third-party platforms.</li>
+                </ul>
+              </div>
             </li>
-            <!-- Experience item: RevoU -->
-            <li>
-              <time>Jun 2025 - Present</time>
-              <h3><a href="https://www.revou.co/" target="_blank">Software Engineering Bootcamp Trainee · RevoU</a></h3>
-              <p>I’m currently enrolled in a 6-month full-time Software Engineering Bootcamp at RevoU, focused on building complete web applications from front to back. On the frontend, I work with HTML, CSS, and JavaScript to create responsive and accessible interfaces. On the backend, I use Go (Golang), PostgreSQL, Redis, and Docker to build RESTful APIs following clean architecture principles. I also practice version control using Git and GitHub, and implement CI/CD pipelines with GitHub Actions to automate deployment. One of the projects I’ve built during the program is this very portfolio website which I designed, coded, and deployed from scratch to showcase my skills and growth as a developer.</p>
+            <li class="experience-row">
+              <div class="experience-date">
+                <time datetime="2025-06">Jun 2025 – Present</time>
+              </div>
+              <div class="experience-main">
+                <h3 class="experience-company">
+                  <a href="https://www.revou.co/" target="_blank" rel="noopener noreferrer">RevoU</a>
+                </h3>
+                <p class="experience-role">Software Engineering Bootcamp Trainee</p>
+                <ul class="experience-bullets">
+                  <li>Build full-stack apps: responsive UIs with HTML, CSS, and JavaScript; APIs with Go, PostgreSQL, Redis, and Docker.</li>
+                  <li>Follow clean architecture and RESTful design; use Git/GitHub and CI/CD with GitHub Actions for deployment.</li>
+                  <li>Ship portfolio and other projects end-to-end, from design to production.</li>
+                </ul>
+              </div>
             </li>
-            <!-- Experience item: Sinergy Security -->
-            <li>
-              <time>Nov 2023 - Jun 2025</time>
-              <h3><a href="https://www.sinergy.co.id/" target="_blank">Manage Service Security Engineer · PT Sinergy Informasi Pratama</a></h3>
-              <p>At Sinergy, I was part of the security operations team that managed Prisma Access (Palo Alto) configurations for BPJS Kesehatan, supporting over 5,000 users across Indonesia. I handled VPN policies, DNS filtering, IP whitelisting, and monitored critical logs to ensure SLA compliance above 95%. I also opened TAC cases with vendors, generated monthly operational reports, and worked closely with client-side teams to deliver secure and stable infrastructure. This role deepened my understanding of cloud security, compliance, and collaboration under pressure those are skills I’m now applying to backend reliability and DevOps practices.</p>
+            <li class="experience-row">
+              <div class="experience-date">
+                <time datetime="2023-11">Nov 2023 – Jun 2025</time>
+              </div>
+              <div class="experience-main">
+                <h3 class="experience-company">
+                  <a href="https://www.sinergy.co.id/" target="_blank" rel="noopener noreferrer">PT Sinergy Informasi Pratama</a>
+                </h3>
+                <p class="experience-role">Managed Service Security Engineer</p>
+                <ul class="experience-bullets">
+                  <li>Operated Prisma Access (Palo Alto) for BPJS Kesehatan, supporting 5,000+ users across Indonesia.</li>
+                  <li>Managed VPN policies, DNS filtering, IP whitelisting, and log monitoring to meet SLA targets (95%+).</li>
+                  <li>Worked with vendors (TAC), reporting, and client teams to keep infrastructure secure and stable.</li>
+                </ul>
+              </div>
             </li>
-            <!-- Experience item: Sinergy IT Support -->
-            <li>
-              <time>Apr 2022 - Nov 2023</time>
-              <h3><a href="https://www.sinergy.co.id/" target="_blank">IT Support Engineer · PT Sinergy Informasi Pratama</a></h3>
-              <p>I began my career in tech as an IT Support Engineer, where I provided L1–L2 support for 150+ internal users and 10+ external clients including Bank BTN, Bank BJB, and BPJS Kesehatan. I resolved over 200 tickets monthly, troubleshooting network issues, user access problems, Windows Server environments, and Cisco/Ruckus equipment. I also contributed to documentation, SOPs, and on-call rotations, ensuring 24/7 availability. This hands-on experience built my foundation in infrastructure support and gave me a customer-first mindset that I now bring into software development.</p>
+            <li class="experience-row">
+              <div class="experience-date">
+                <time datetime="2022-04">Apr 2022 – Nov 2023</time>
+              </div>
+              <div class="experience-main">
+                <h3 class="experience-company">
+                  <a href="https://www.sinergy.co.id/" target="_blank" rel="noopener noreferrer">PT Sinergy Informasi Pratama</a>
+                </h3>
+                <p class="experience-role">IT Support Engineer</p>
+                <ul class="experience-bullets">
+                  <li>Provided L1–L2 support for 150+ internal users and clients including BTN, BJB, and BPJS Kesehatan.</li>
+                  <li>Resolved 200+ tickets monthly: networks, access, Windows Server, Cisco/Ruckus, and documentation.</li>
+                  <li>Contributed to SOPs and on-call rotations to keep services available 24/7.</li>
+                </ul>
+              </div>
             </li>
           </ul>
-                           <a href="./assets/documents/resume - Muhammad Rizal.pdf" target="_blank">View Full Resume</a>
+          <a class="experience-resume" href="./assets/documents/resume - Muhammad Rizal.pdf" target="_blank" rel="noopener noreferrer">View full resume</a>
         </section>
         <!-- Projects section: portfolio projects -->
         <section id="projects">
